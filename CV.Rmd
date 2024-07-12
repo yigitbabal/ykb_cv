@@ -1,0 +1,100 @@
+---
+name: Yigit Koray
+surname: Babal
+position: "Postdoctoral Researcher"
+address: "Stockholm, Sweden"
+phone: +46 73 675 4331
+profilepic: YKB.JPG
+www: yigitbabal.github.io
+email: "yigit.koray.babal@ki.se"
+twitter: BabalKoray
+github: yigitbabal
+linkedin: yigitbabal
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "I am a postdoctoral scholar at Karolinska Institutet focusing on the development and use of computational approaches in the neurobiology field. My research focus is gene regulation of nervous system development and neurodegenerative diseases especially using evolutionary aspects."
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Skills
+
+ * Full experience with next generation sequencing data analysis with multi-omic approaches (scRNA-seq, scATAC-seq, bulk RNA-seq, ChIP-seq, CUT&RUN)
+ * Single cell/nuclei sequencing and downstream analysis (clustering, trajectory analysis, reference based machine learning approaches)
+ * Inference algorithms (Gene regulatory network, cell-to-cell communication, pseudotime inference)
+ * Single cell DNA barcoding and integrative analysis with single cell transcriptomic (TrackerSeq)
+ * Highly experience in R and Python.
+ * Highly experience in Linux (both desktop and server/cloud side), Bash scripting.
+ * Highly experience Docker/Singularity, HPC clusters and Slurm system.
+ * Web development (HTML, CSS, Static websites, Shiny application)
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "PhD in Biotechnology", "2018-2023", "Gebze Technical University", "Kocaeli, Turkey",
+  "Master of Molecular Biology and Genetics", "2016-2018", "Gebze Technical University", "Kocaeli, Turkey",
+  "Bachelor of Biology", "2012-2016", "Marmara University", "Istanbul, Turkey",
+  "Double Major in Mathematics", "2012-2014", "Marmara University", "Istanbul, Turkey"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Research Experience
+
+```{r}
+library(tibble)
+tribble(
+  ~ Title, ~ Year, ~ Institution, ~ Where, ~ Projects,
+  "Postdoctoral Researcher", "2023-", "Karolinska Institutet", "Stockholm, Sweden", c("Single cell multi omic data analysis of brain-vascular cell interaction inALS and MS patient samples.", "Multi-species comparison of neuro-regeneration"),
+  "Guest Researcher", "2021-2022", "Max Planck Institute of Biological Intelligence", "Munich, Germany", c("Single cell multi omic data analysis (scRNAseq, scATACseq, ChIPseq)of inhibitory neuron development including trajectory analysis and generegulatory network inference, motif enrichment and gene oscillatorynetwork analysis.", "Single cell transcriptomic analysis of embryonic development of cortexwith pertubation studies", "Scientific maintenance of Linux-based workstation and HPC clustersincluding reproducible scripting, R and CLI package/tool maintenance"),
+  "Research Assistant", "2019-2023", "Gebze Technical University", "Kocaeli, Turkey", c("Single cell transcriptomic and genomic analyses of nervous systemdevelopment and gene regulation during neurogenesis", "Transcriptomic analysis of neurogenesis and brain tumors and analysisof gene regulatory network", "Quantitative kinetic modelling of intra-familial regulation of specifictranscription factor family.", "Molecular investigation of brain tumor cell culture models.")
+) %>% 
+  detailed_entries(Title, Year, Institution, Where, Projects)
+```
+
+
+# Awards
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  2023, "Fellowship", "Wenner-Gren Fellow Fellowships for Postdoctoral Training",
+  2021, "Grant", "Erasmus Grant to be a Guest Researcher in Max Planck Institute of Biological Intelligence",
+  2018, "Scholarship", "Council of Higher Education of Turkey 100/2000 PhD Scholarship",
+  2016, "Graduation", "As the best student in the programme with high honour degree."
+) %>% 
+  brief_entries(
+    glue::glue("Awards in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Teaching Experience
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Course,
+  "PhD course", "2024", "Karolinska Institutet", "Stockholm, Sweden", "The Vascular Brain: Evolutionary differences of cell trajectories in developing mammalian cortex",
+    "Bachelor course", "2023", "Karolinska Institutet", "Stockholm, Sweden", "Cell-, Stem Cell and Developmental Biology"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, Course)
+```
+
+# Publications
+
+```{r}
+library(dplyr)
+#knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("packages.bib") %>%
+  arrange(desc(issued), issued)
+```
+
